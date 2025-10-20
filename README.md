@@ -1,5 +1,5 @@
 
-# 🚀 L1 Project Planner — CrewAI + Streamlit
+# 🚀 Product Project Planner — CrewAI + Streamlit
 
 An **AI-powered project planning assistant** that automates task breakdown, time/resource estimation, and milestone creation.  
 Built with [CrewAI](https://github.com/joaomdmoura/crewai) and a clean [Streamlit](https://streamlit.io) frontend.
@@ -8,7 +8,7 @@ Built with [CrewAI](https://github.com/joaomdmoura/crewai) and a clean [Streamli
 
 ## 🧠 What it does
 
-L1 takes a few plain‑text project inputs — like type, objectives, team members, and requirements — and generates:
+Product Project Planner takes a few plain‑text project inputs — like type, objectives, team members, and requirements — and generates:
 - 🗂️ A **structured task list** with estimated hours and required resources.  
 - 🏁 A **milestone breakdown** showing grouped deliverables.  
 - 💰 **Usage metrics** with estimated token cost.  
@@ -47,7 +47,7 @@ L1 takes a few plain‑text project inputs — like type, objectives, team membe
 ```bash
 # 1. Clone repository or copy files
 git clone <repo_url>
-cd L1-project-planner
+cd Product Project Planner-project-planner
 
 # 2. Install dependencies
 pip install -r requirements.txt
