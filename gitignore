@@ -1,0 +1,52 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Streamlit and cache files
+.streamlit/
+.streamlit-cache/
+.cache/
+__cache__/
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+logs/
+*.log
+
+# Configs and secrets
+*.env
+.env.*
+secrets.yaml
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# IDE settings
+.vscode/
+.idea/
+*.iml
+
+# Temporary data
+tmp/
+temp/
+*.tmp
+
+
+anaconda_projects/
