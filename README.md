@@ -1,147 +1,109 @@
-
-# 🚀 Product Project Planner — CrewAI + Streamlit
-
-An **AI-powered project planning assistant** that automates task breakdown, time/resource estimation, and milestone creation.  
-Built with [CrewAI](https://github.com/joaomdmoura/crewai) and a clean [Streamlit](https://streamlit.io) frontend.
+# 🧠 Product Project Planner  
+**AI-powered multi-agent system for smarter project planning**
 
 ---
 
-## 🧠 What it does
+## 📘 Overview  
+Product Project Planner is an **AI-assisted planning system** built with **Streamlit** and a modular **Python backend**.  
+It turns plain-text project inputs — such as objectives, team members, and requirements — into structured, actionable project plans.
 
-Product Project Planner takes a few plain‑text project inputs — like type, objectives, team members, and requirements — and generates:
-- 🗂️ A **structured task list** with estimated hours and required resources.  
-- 🏁 A **milestone breakdown** showing grouped deliverables.  
-- 💰 **Usage metrics** with estimated token cost.  
-- 📦 Downloadable JSON outputs for reuse in your own systems.
+It estimates effort hours, assigns owners, and creates milestones — simulating how a real project manager would plan work.
 
 ---
 
-## ⚙️ Tech Stack
-
-| Layer | Tools |
-|-------|-------|
-| **Core AI Logic** | CrewAI (Agents, Tasks, Crew orchestration) |
-| **Frontend** | Streamlit |
-| **Data Models** | Pydantic v2 |
-| **Config** | YAML (agents.yaml, tasks.yaml) |
-| **Packaging** | requirements.txt |
+## 🏗️ Features  
+✅ **Dynamic Input Interface** – Describe your project in natural text.  
+✅ **Role-Aware Effort Estimation** – Task hours depend on role, complexity, and team capacity.  
+✅ **Team & Resource Allocation** – Distributes workload automatically by member capacity.  
+✅ **Milestone Generator** – Groups tasks into MVP and Beta phases.  
+✅ **Downloadable Outputs** – Export tasks and plans as JSON or CSV.  
+✅ **Modular Architecture** – Clean separation between UI, parsers, role logic, and planner.
 
 ---
 
-## 📁 Project Structure
-
+## 🗂️ Folder Structure
 ```
-.
-├── config/
-│   ├── agents.yaml
-│   └── tasks.yaml
-├── streamlit_app.py
-├── requirements.txt
-└── README.md
+product_planner/
+├── app.py                     # Streamlit UI
+├── requirements.txt           # Dependencies
+└── services/
+    ├── __init__.py
+    ├── parsers.py             # Team & requirement text parsing
+    ├── roles.py               # Role normalization helpers
+    └── planner.py             # Core planning logic (task, milestone, allocation)
 ```
 
 ---
 
-## 🧩 Installation
+## ⚙️ Installation
 
 ```bash
-# 1. Clone repository or copy files
-git clone <repo_url>
-cd Product Project Planner-project-planner
-
-# 2. Install dependencies
+git clone https://github.com/yourusername/Product-Project-Planner.git
+cd Product-Project-Planner
 pip install -r requirements.txt
+```
 
-# 3. Run Streamlit
-streamlit run streamlit_app.py
+Then run:
+```bash
+streamlit run app.py
 ```
 
 ---
 
-## 🪄 Usage
+## 🧩 How It Works
 
-1. Open the Streamlit sidebar.  
-2. Set paths for your YAML config files.  
-3. Fill in project details:
-   - Project Type (e.g., Website, Mobile App)
-   - Industry
-   - Objectives
-   - Team Members
-   - Requirements  
-4. Click **“Run Plan”** to trigger the CrewAI agents.
+### 1️⃣ Input Section
+Provide project type, industry, objectives, team, and requirements.
 
-The app will display three tabs:  
-✅ Tasks table • ✅ Milestones • ✅ Token Cost Summary  
+![Input Screenshot](img/image.png)
 
-You can also download the generated JSON for further processing.
+### 2️⃣ Planning Logic
+Each role gets work based on capacity, project complexity, and requirement size.
+
+![Planning Screenshot](img/image1.png)
+![Planning Screenshot](img/image2.png)
+
+### 3️⃣ Download & Export
+Export your generated project plan to JSON or CSV.
+
+![Download Screenshot](img/image3.png)
 
 ---
 
-## 🧰 YAML Config Expectations
-
-### agents.yaml
-```yaml
-project_planning_agent:
-  role: "Planner"
-  goal: "Break down objectives into tasks"
-
-estimation_agent:
-  role: "Estimator"
-  goal: "Estimate time and resources for each task"
-
-resource_allocation_agent:
-  role: "Allocator"
-  goal: "Group tasks into milestones and finalize plan"
+## 🧪 Example Input
 ```
+Project Type: Website
+Industry: E-commerce
+Objectives: Develop an e-commerce site for small businesses
+Team:
+  - John Doe (Project Manager) [wh=10]
+  - Priya Shah (Software Engineer) [wh=25]
+  - Alex Nguyen (Frontend Engineer) [wh=20]
+  - Maria Lopez (Designer) [wh=15]
+  - Ethan Chen (QA Engineer) [wh=15]
+  - Sara Patel (DevOps) [wh=18]
 
-### tasks.yaml
-```yaml
-task_breakdown:
-  description: "Break down project objectives into tasks"
-
-time_resource_estimation:
-  description: "Estimate time and resource usage per task"
-
-resource_allocation:
-  description: "Form milestones and output final ProjectPlan"
+Requirements:
+  - Responsive UI
+  - Secure login & registration
+  - Payment gateway integration
+  - Admin dashboard
+  - CI/CD deployment on AWS
 ```
 
 ---
 
-## 🧾 Output Schema
-
-```json
-{
-  "tasks": [
-    {"task_name": "Design UI", "estimated_time_hours": 8.5, "required_resources": ["Designer", "Figma"]}
-  ],
-  "milestones": [
-    {"milestone_name": "Design Phase", "tasks": ["Design UI", "Review UI"]}
-  ]
-}
-```
+## 💡 Future Enhancements
+- Integrate LLM-based CrewAI orchestration  
+- Add Gantt chart visualization  
+- Export to Notion or Jira  
+- Historical tracking of previous plans  
 
 ---
 
-## 💡 Ideas for Extension
+## 👨‍💻 Author
+Developed by **Paritosh Gandre**  
+*M.S. Data Science | Kent State University*  
+📧 paritoshkrcg@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/paritosh-gandre-164b4a180/) | [GitHub](https://github.com/paritosh100)
 
-- 📊 Gantt chart visualization using Plotly or Altair  
-- 🔄 Integration with Notion, Jira, or Trello APIs  
-- ☁️ FastAPI backend + React frontend for multi‑user access  
-- 🧮 Persistent DB (SQLite / Postgres) to store historical runs  
-- 🧑‍💼 User authentication and plan versioning
-
----
-
-## 🧑‍💻 Author
-
-**Paritosh Gandre**  
-M.S. Data Science, Kent State University  
-[GitHub](https://github.com/paritosh100) • [Portfolio](https://paritosh-gandre.vercel.app) • [LinkedIn](https://linkedin.com/in/paritosh-gandre)
-
----
-
-## 🏷️ License
-
-MIT License © 2025  
-Free to use, modify, and share.
