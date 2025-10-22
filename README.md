@@ -96,6 +96,7 @@ Simply fill in what you're building, who's on your team, and what you need:
 
 ### Step 2: Activate AI Agents
 Check the **"Estimate hours"** box to activate the AI team:
+<img width="1754" height="553" alt="Screenshot 2025-10-22 174731" src="https://github.com/user-attachments/assets/0f388750-e010-4dbd-a897-5a4afbe87a6b" />
 
 ![CrewAI Activation](img/Screenshot%202025-10-22%20171453.png)
 
