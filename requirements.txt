@@ -2,11 +2,14 @@
 # note which revision of python, for example 3.9.6
 # in this file, insert all the pip install needs, include revision
 
-#for example:
-#torch==2.0.1
-#matplotlib==3.7.2
-# streamlit>=1.37
+# Core dependencies
+streamlit>=1.37
 pydantic>=2.7
 pyyaml>=6.0.2
-crewai
-crewai_tools
+pandas>=2.0.0
+python-dotenv>=1.0.0
+
+# AI/ML dependencies
+openai>=1.0.0
+crewai>=0.30.0
+crewai_tools>=0.4.0
